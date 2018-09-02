@@ -124,7 +124,7 @@ from flights
 order by 1
 ```
 #### Query 2
-I was surprised to see that the majority of delays were related 'air_system', 'late_aircraft', and 'airline', contrary to my initial theory that most delays were related to weather.
+I was surprised to see that the majority of delays were related to 'air_system', 'late_aircraft', and 'airline', contrary to my initial theory that most delays were related to weather.
 ```
 select *
 from (select case when air_system_delay > 15 then 'air_system'
@@ -157,7 +157,7 @@ from flights
 order by 1
 ```
 
-#### Query 3
+#### Query 4
 It appears as though mornings are the best time to fly if you'd like to avoid delays.
 ```
 select distance
@@ -182,5 +182,6 @@ order by 1
 import pandas as pd
 flights = pd.read_csv('flights.csv')
 import pandasql as ps
+q1 = """PLACE QUERY HERE"""
 print(ps.sqldf(q1, locals()))
 ```
